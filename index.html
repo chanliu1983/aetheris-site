@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aetheris — a mech strategy game of water, power and steel</title>
+<meta name="description" content="Found a fortress in the desert, pipe water to it, wire up power, and command a small mech army hex by hex. A turn-based strategy game for the Mac.">
+<meta property="og:title" content="Aetheris: The Sacred Wastes">
+<meta property="og:description" content="Water. Power. Steel. A turn-based mech strategy game for the Mac.">
+<meta property="og:image" content="assets/02-battle.jpg">
+<style>
+  :root {
+    --bg:#120d0a; --panel:#1c1511; --panel2:#251c16; --ink:#f1e9df;
+    --dim:#b9a998; --sand:#e7a04a; --water:#4fc3d9; --line:#33271f;
+  }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#faf6f0; --panel:#fff; --panel2:#f2ebe1; --ink:#22180f;
+            --dim:#6b5b4b; --sand:#a8641a; --water:#1f8aa0; --line:#e6dccf; }
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 22px; }
+  header.top {
+    display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+    padding:22px 0; border-bottom:1px solid var(--line);
+  }
+  .logo { font-weight:700; letter-spacing:.24em; font-size:.86rem; flex:1 1 auto; }
+  header.top nav a { color:var(--dim); text-decoration:none; font-size:.9rem; margin-left:18px; }
+  header.top nav a:hover { color:var(--sand); }
+
+  .hero { padding:74px 0 56px; text-align:center; }
+  .hero h1 {
+    margin:0 0 14px; font-size:clamp(2.4rem,7vw,4.2rem); line-height:1.02;
+    letter-spacing:-.025em; font-weight:800;
+  }
+  .hero h1 .water { color:var(--water); }
+  .hero h1 .sand { color:var(--sand); }
+  .hero p.tag { margin:0 auto 30px; max-width:35em; font-size:1.14rem; color:var(--dim); }
+  .cta { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .cta a, .cta span {
+    display:inline-block; text-decoration:none; border-radius:999px;
+    padding:11px 24px; font-size:.95rem; font-weight:600;
+    border:1px solid var(--line); color:var(--ink); background:var(--panel);
+  }
+  .cta .primary { background:var(--sand); border-color:var(--sand); color:#1b120a; }
+  .cta a:hover { border-color:var(--sand); }
+
+  figure { margin:0; }
+  figure img {
+    display:block; width:100%; height:auto; border-radius:12px;
+    border:1px solid var(--line); background:var(--panel2);
+  }
+  figcaption { margin-top:10px; font-size:.9rem; color:var(--dim); text-align:center; }
+  .shot { margin:0 0 34px; }
+  .pair { display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
+  .pair figcaption { margin-top:9px; font-size:.86rem; }
+
+  section { padding:52px 0; border-top:1px solid var(--line); }
+  h2 { font-size:clamp(1.5rem,3.6vw,2rem); margin:0 0 18px; letter-spacing:-.02em; }
+  .lede { font-size:1.06rem; color:var(--dim); max-width:44em; margin:0 0 28px; }
+  .cols { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(232px,1fr)); }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:11px; padding:18px; }
+  .card p { margin:0; font-size:.94rem; color:var(--dim); }
+  .card .who { color:var(--ink); font-weight:650; margin:0 0 6px; }
+  .card .role { font-size:.76rem; letter-spacing:.13em; color:var(--sand);
+                text-transform:uppercase; margin:0 0 9px; }
+  .stat { display:flex; gap:34px; flex-wrap:wrap; margin:0 0 26px; padding:0; list-style:none; }
+  .stat b { display:block; font-size:1.9rem; letter-spacing:-.02em; }
+  .stat span { font-size:.85rem; color:var(--dim); }
+  .check { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); }
+  .check div { background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--water);
+               border-radius:10px; padding:14px 16px; }
+  .check b { display:block; margin-bottom:3px; }
+  .check span { color:var(--dim); font-size:.9rem; }
+  footer { border-top:1px solid var(--line); padding:38px 0 60px; color:var(--dim); font-size:.92rem; }
+  footer a { color:var(--sand); }
+  footer .row { display:flex; gap:22px; flex-wrap:wrap; margin-bottom:14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="logo">AETHERIS</div>
+  <nav><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
+</header>
+
+<main>
+  <div class="hero">
+    <h1><span class="water">Water.</span><br><span class="sand">Power.</span><br>Steel.</h1>
+    <p class="tag">Found a fortress in the desert. Pipe water to it, wire up power, and
+    command a small army of mechs hex by hex — where every step, every turn of a turret
+    and every cliff counts.</p>
+    <div class="cta">
+      <span class="primary">Coming to the Mac App Store</span>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy policy</a>
+    </div>
+  </div>
+
+  <figure class="shot">
+    <img src="assets/02-battle.jpg" width="1600" height="1000"
+         alt="Two mech squads trading fire across a hex desert: a heat beam lances out from a mech while an enemy rider and mechs take hits, damage numbers floating above them.">
+  </figure>
+
+  <section>
+    <h2>Every army starts with a pipe</h2>
+    <p class="lede">An oasis lives on what you connect to it. Pump a spring and lay the
+    pipe home; water the farms that carry your buildings and your troops; put a generator on
+    a geothermal vent and string the wire over the hills. Mechs cool from your water network
+    and charge their skills from your grid — so a raider who cuts a pipe can stop an army
+    without firing at it.</p>
+    <figure class="shot">
+      <img src="assets/03-fortress.jpg" width="1600" height="1000" loading="lazy"
+           alt="A walled fortress on a desert plateau: workshops and a hangar inside, watered wheat fields outside, windmills, and blue pipes and power lines running off across the sand.">
+    </figure>
+    <div class="cols">
+      <div class="card"><p class="role">Water</p><p class="who">Pumps and pipes</p>
+        <p>Springs, deep aquifers, lake shores and the rare ancient vein nodes. Pipes follow
+        the ground and show it: running water when wet, rust when cut.</p></div>
+      <div class="card"><p class="role">Power</p><p class="who">Generators and wires</p>
+        <p>Vents and ancient cores feed the grid. Tesla towers outside your walls draw first
+        and zap anything that comes close.</p></div>
+      <div class="card"><p class="role">Capacity</p><p class="who">Farms carry the town</p>
+        <p>Every building and every unit takes room a watered farm provides. A town builds
+        one unit at a time; hangars decide how many you can field.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Small armies. Precise moves.</h2>
+    <p class="lede">Aetheris is not about the biggest stack. A handful of units, each one
+    placed with care: mechs fire only where they face, a hit from behind does double
+    damage, high ground lets the big guns reach farther, and a mech that strays from the water overheats.
+    Jet-jump up a cliff the enemy thought was a wall, or slip a rider behind the lines.</p>
+    <div class="pair">
+      <figure>
+        <img src="assets/04-jump.jpg" width="1600" height="1000" loading="lazy"
+             alt="A mech jet-jumping onto a red mesa ringed by cliffs, leaving a ring of exhaust on the sand below.">
+        <figcaption>Jet Jump: up the cliffs no one can walk.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/06-overview.jpg" width="1600" height="1000" loading="lazy"
+             alt="A wide view over a canyon-cut desert map: fortresses, pipes and power lines, mech squads and an airship.">
+        <figcaption>Canyons, passes and plateaus shape every war.</figcaption>
+      </figure>
+    </div>
+    <ul class="stat" style="margin-top:30px">
+      <li><b>8</b><span>unit types</span></li>
+      <li><b>3</b><span>cultures</span></li>
+      <li><b>14</b><span>unit skills</span></li>
+      <li><b>4</b><span>science branches</span></li>
+      <li><b>2</b><span>roads to victory</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Science is a choice, not a checklist</h2>
+    <p class="lede">Research buys techs across four branches — Mobility, Firepower, Defence
+    and Industry. Every skill, Jet Jump included, has to be researched first, and each
+    branch's second tier makes you pick one of two for the whole game: an extra move for
+    your mechs or for your riders, longer barrels or a beam lock, a shield or heavier plating.
+    Each tech you own makes the next one dearer, so no two armies end up alike.</p>
+    <figure class="shot">
+      <img src="assets/05-science.jpg" width="1600" height="1000" loading="lazy"
+           alt="The technology tree: four branch columns of research cards, some researched in green, rival picks locked in grey, and a detail panel for Capacitor Armor.">
+    </figure>
+  </section>
+
+  <section>
+    <h2>Two roads to victory</h2>
+    <div class="cols">
+      <div class="card"><p class="role">Conquest</p><p class="who">Take every fortress</p>
+        <p>Breach the walls with siege spiders, hold the core, and capture each rival's
+        towns until no one is left standing.</p></div>
+      <div class="card"><p class="role">The vein</p><p class="who">Hold the ancient nodes</p>
+        <p>Pump more of the ancient vein nodes than any rival and hold them through the
+        countdown — while everyone else comes to bomb your pumps.</p></div>
+      <div class="card"><p class="role">Learn it fast</p><p class="who">A guided tutorial</p>
+        <p>A hand-made map walks you through it one step at a time: found, pipe, farm, power,
+        fight, research, jump, and win by the vein.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Made for the Mac</h2>
+    <div class="check">
+      <div><b>Apple silicon and Intel</b><span>One universal app, macOS 14 or later.</span></div>
+      <div><b>Game Center</b><span>Achievements, a fastest-conquest leaderboard, and online
+        matches through Apple's matchmaker.</span></div>
+      <div><b>Mouse, keyboard or controller</b><span>Every screen works with a game
+        controller as well.</span></div>
+      <div><b>LAN play</b><span>Host or join a game on your local network.</span></div>
+      <div><b>English and Chinese</b><span>Switch at any time in Settings.</span></div>
+      <div><b>No ads, no purchases, no tracking</b><span>Buy it once; it collects nothing
+        about you. <a href="privacy.html" style="color:var(--sand)">Privacy policy</a>.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <figure class="shot" style="margin:0">
+      <img src="assets/01-menu.jpg" width="1600" height="1000" loading="lazy"
+           alt="The title screen: the AETHERIS — THE SACRED WASTES emblem beside three mechs standing in a dusty hangar.">
+    </figure>
+  </section>
+</main>
+
+<footer>
+  <div class="row">
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy policy</a>
+    <a href="https://github.com/chanliu1983/aetheris-site/issues/new">Report a problem</a>
+  </div>
+  <div>Aetheris (圣脉荒原) · © 2026 LIU LEI</div>
+</footer>
+</div>
+</body>
+</html>

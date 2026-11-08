@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Aetheris</title>
+<style>
+  :root { --bg:#120d0a; --panel:#1c1511; --ink:#f1e9df; --dim:#b9a998; --sand:#e7a04a; --line:#33271f; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#faf6f0; --panel:#fff; --ink:#22180f; --dim:#6b5b4b; --sand:#a8641a; --line:#e6dccf; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",sans-serif;
+    -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:760px; margin:0 auto; padding:40px 22px 70px; }
+  a { color:var(--sand); }
+  h1 { font-size:1.6rem; margin:0 0 6px; letter-spacing:-0.01em; }
+  .sub { color:var(--dim); margin:0 0 28px; font-size:.92rem; }
+  h2 { font-size:1.12rem; margin:2.1em 0 .5em; letter-spacing:-0.005em; }
+  p, li { margin:0 0 .85em; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:11px; padding:18px 20px; }
+  .card p:last-child { margin-bottom:0; }
+  .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+  .tags span { border:1px solid var(--line); border-radius:999px; padding:3px 12px; font-size:.84rem; color:var(--dim); }
+  code { font-size:.9em; }
+  .back { display:inline-block; margin-bottom:26px; text-decoration:none; font-size:.9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Aetheris</a>
+  <h1>Privacy Policy</h1>
+  <p class="sub">Aetheris (圣脉荒原) · © 2026 LIU LEI · last updated November 2026</p>
+
+  <div class="card">
+    <p><b>Aetheris does not collect, store, transmit or sell any personal data.</b>
+    There are no accounts to create, no email address to give, and nothing is sent to the
+    developer — or anywhere else. The only network traffic is the multiplayer game you choose
+    to play, with the players you choose to play with.</p>
+    <div class="tags">
+      <span>No accounts</span><span>No analytics</span><span>No advertising</span>
+      <span>No in-app purchases</span><span>No crash reporting</span><span>No tracking</span>
+    </div>
+  </div>
+
+  <h2>1. Summary</h2>
+  <p>Aetheris runs on your own Mac. It has no sign-in of its own, no advertising SDKs, no
+  analytics or telemetry library, and no crash or error reporting. It contains no in-app
+  purchases. Single-player play, including the tutorial, works with the network switched off.</p>
+
+  <h2>2. What is stored on your device</h2>
+  <p>The game writes a few files to its own data folder, inside the container macOS gives every
+  App Store app. They stay on your Mac and are never uploaded:</p>
+  <ul>
+    <li><b>Settings</b> — <code>settings.cfg</code>: language, volumes, controls, graphics and
+    interface choices, and which one-time tips you have already seen.</li>
+    <li><b>Saved games</b> — the <code>saves</code> folder: the games you save, and the
+    automatic saves made at the end of each turn.</li>
+  </ul>
+  <p>Deleting the game removes them. There are no cookies and no identifier of any kind.</p>
+
+  <h2>3. Network connections</h2>
+  <p>The game opens a network connection only for multiplayer, and only when you ask for it:</p>
+  <ul>
+    <li><b>LAN games.</b> Hosting a game listens on your local network (port 47321), and the
+    LAN screen announces and finds games with small broadcast messages on your local network
+    (port 47322) — just a fixed game identifier and the port to join, nothing about you. This traffic stays on your local network. macOS
+    asks your permission first.</li>
+    <li><b>Game Center.</b> If you sign in to Game Center, the game reports the achievements
+    you unlock and, when you win by conquest, how many rounds it took (for the leaderboard). If
+    you play online, Apple's Game Center finds the other player and carries the game between you.
+    That is Apple's service, under <a href="https://www.apple.com/legal/privacy/">Apple's
+    privacy policy</a>; Aetheris receives only your Game Center display name, to show it to the
+    other player in the match.</li>
+  </ul>
+  <p>What goes between players in a match is the game itself: the map, the moves, and the
+  player names. Nothing of it is kept after the match, and nothing is sent to the developer.</p>
+
+  <h2>4. Third parties</h2>
+  <p>No analytics, advertising, attribution, crash-reporting or telemetry SDK is included.
+  The only third-party service is Apple Game Center, and only when you sign in to it, as
+  described above.</p>
+
+  <h2>5. Children</h2>
+  <p>Aetheris collects no personal data from anyone, children included. Online play goes through
+  Game Center, whose own parental controls apply.</p>
+
+  <h2>6. Changes</h2>
+  <p>If this policy ever changes, the new version will be posted on this page with a new date.</p>
+
+  <h2>7. Contact</h2>
+  <p>Questions about privacy: open an issue at
+  <a href="https://github.com/chanliu1983/aetheris-site/issues/new">github.com/chanliu1983/aetheris-site/issues</a>.</p>
+</div>
+</body>
+</html>
