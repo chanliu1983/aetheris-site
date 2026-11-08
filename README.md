@@ -1,4 +1,4 @@
-# Aetheris — Support, Privacy & Marketing
+# Aetheris: Sacred Wastes — Support, Privacy & Marketing
 
 A turn-based mech strategy game of water, power and steel: found a fortress in the desert,
 pipe water to it, wire up power, and command a small mech army hex by hex.
