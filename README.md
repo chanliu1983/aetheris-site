@@ -21,5 +21,5 @@ pulled from anywhere. Screenshots come from the game's `tools/store_screenshots.
 
 **Open an issue:** <https://github.com/chanliu1983/aetheris-site/issues/new>
 
-Say which version you play (bottom of the main menu), your Mac and macOS version, what you
+Say which version you play (bottom of the main menu), your device and system version, what you
 were doing, and — if you can — attach a save from the moment it happened.
