@@ -15,7 +15,8 @@ the marketing page, the privacy policy, and the place to report problems.
 | **Support page** | <https://chanliu1983.github.io/aetheris-site/support.html> |
 
 Three static files, English only. No cookies, no trackers, no external requests, no fonts
-pulled from anywhere. Screenshots come from the game's `tools/store_screenshots.gd`.
+pulled from anywhere. Mac screenshots come from the game's `tools/store_screenshots.gd`;
+the iPhone and iPad galleries use its `iphone --phone` and `ipad --phone` modes.
 
 ## Reporting a problem
 

@@ -5,9 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aetheris: Sacred Wastes — a mech strategy game of water, power and steel</title>
 <meta name="description" content="Found a fortress in the desert, pipe water to it, wire up power, and command a small mech army hex by hex. A turn-based strategy game for Mac, iPhone and iPad with a ten-mission campaign.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanliu1983.github.io/aetheris-site/">
 <meta property="og:title" content="Aetheris: Sacred Wastes">
 <meta property="og:description" content="Water. Power. Steel. A turn-based mech strategy game for Mac, iPhone and iPad.">
-<meta property="og:image" content="assets/02-battle.jpg">
+<meta property="og:image" content="https://chanliu1983.github.io/aetheris-site/assets/02-battle.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1000">
+<meta property="og:image:alt" content="Two mech squads trading fire across the desert in Aetheris.">
 <style>
   :root {
     --bg:#120d0a; --panel:#1c1511; --panel2:#251c16; --ink:#f1e9df;
@@ -56,7 +61,7 @@
   }
   figcaption { margin-top:10px; font-size:.9rem; color:var(--dim); text-align:center; }
   .shot { margin:0 0 34px; }
-  .pair { display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
+  .pair { display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); }
   .pair figcaption { margin-top:9px; font-size:.86rem; }
 
   section { padding:52px 0; border-top:1px solid var(--line); }
@@ -71,7 +76,7 @@
   .stat { display:flex; gap:34px; flex-wrap:wrap; margin:0 0 26px; padding:0; list-style:none; }
   .stat b { display:block; font-size:1.9rem; letter-spacing:-.02em; }
   .stat span { font-size:.85rem; color:var(--dim); }
-  .check { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); }
+  .check { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(min(290px,100%),1fr)); }
   .check div { background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--water);
                border-radius:10px; padding:14px 16px; }
   .check b { display:block; margin-bottom:3px; }
@@ -104,13 +109,13 @@
 
   <figure class="shot">
     <img src="assets/02-battle.jpg" width="1600" height="1000"
-         alt="Two mech squads trading fire across a hex desert: a heat beam lances out from a mech while an enemy rider and mechs take hits, damage numbers floating above them.">
+         alt="Two mech squads trading fire across a hex desert: a heat beam lances toward enemy mechs and a rider while guarded fronts, attack range and the selected unit's actions are visible.">
   </figure>
 
   <section>
     <h2>Every army starts with a pipe</h2>
     <p class="lede">An oasis lives on what you connect to it. Pump a spring and lay the
-    pipe home; water the farms that carry your buildings and your troops; put a generator on
+    pipe home; water the farms that support your buildings; put a generator on
     a geothermal vent and string the wire over the hills. Mechs cool from your water network
     and charge their skills from your grid — so a raider who cuts a pipe can stop an army
     without firing at it.</p>
@@ -126,8 +131,8 @@
         <p>Vents and ancient cores feed the grid. Tesla towers outside your walls draw first
         and zap anything that comes close.</p></div>
       <div class="card"><p class="role">Capacity</p><p class="who">Farms carry the town</p>
-        <p>Every building and every unit takes room a watered farm provides. A town builds
-        one unit at a time; hangars decide how many you can field.</p></div>
+        <p>Every building takes room a watered farm provides. A town builds one unit at a
+        time; hangars decide how many units you can field.</p></div>
     </div>
   </section>
 
@@ -177,15 +182,16 @@
     <p class="lede">The map is more than a board for your army. Toxic pools burn ground units
     that cross or stop in them, while carnivorous flycatchers lob poison bombs at nearby troops.
     Airships can pass safely overhead; everyone else needs a route around or a quick strike.
-    And whatever you have not explored still lies under a sea of drifting cloud.</p>
+    Whatever you have not explored lies under a sea of drifting cloud. Above it all, two suns
+    light wind-carved sand, stony hardpan and cliffs as cloud shadows move across the battle.</p>
     <figure class="shot">
       <img src="assets/08-flycatcher.jpg" width="1600" height="1000" loading="lazy"
-           alt="A pitcher-shaped flycatcher snaps forward and spits a glowing green venom glob in an arc toward a mech beside a walled fortress; the mech's card shows a Poison bar and a warning about the plant's range.">
+           alt="A pitcher-shaped flycatcher on a cliff spits a glowing green venom glob toward a mech; toxic pools burn nearby, and the unit card shows Poison and a warning about the plant's range.">
     </figure>
     <div class="cols">
       <div class="card"><p class="role">Terrain hazard</p><p class="who">Toxic pools</p>
         <p>Crossing the glowing green fissures costs health, and stopping there costs more.
-        Nothing can be built on them, and a poisoned route can be worse than the long way round.</p></div>
+        Nothing can be built on them, and the direct route can cost more than the long way round.</p></div>
       <div class="card"><p class="role">Neutral predator</p><p class="who">Flycatchers</p>
         <p>As each round ends, a pitcher-shaped plant spits a venom bomb at one ground unit
         within two hexes: 2 damage at each of the next three round ends, wherever the victim
@@ -240,6 +246,20 @@
 
   <section>
     <h2>Made for Mac, iPhone and iPad</h2>
+    <p class="lede">The complete game on every supported device — the same campaign,
+    skirmishes, hazards and online matches, with an interface adapted to how you play.</p>
+    <div class="pair" style="margin-bottom:30px">
+      <figure>
+        <img src="assets/iphone/02-battle.jpg" width="1434" height="660" loading="lazy"
+             alt="The touch-first iPhone interface in a landscape battle, with labeled unit actions, health and energy bars, and a minimap.">
+        <figcaption>iPhone: touch-first controls in landscape.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/ipad/07-campaign.jpg" width="1376" height="1032" loading="lazy"
+             alt="A campaign mission on iPad, showing the current battlefield, touch controls and foldable mission objective panel.">
+        <figcaption>iPad: the full campaign with room to plan.</figcaption>
+      </figure>
+    </div>
     <div class="check">
       <div><b>iPhone and iPad</b><span>A touch-first interface and landscape play, with iOS or
         iPadOS 17 or later.</span></div>
@@ -248,7 +268,7 @@
         matches through Apple's matchmaker.</span></div>
       <div><b>Touch, mouse, keyboard or controller</b><span>Touch controls on iPhone and iPad;
         mouse, keyboard and controller support on Mac.</span></div>
-      <div><b>LAN play</b><span>Host or join a game on your local network.</span></div>
+      <div><b>LAN play on Mac</b><span>Host or join a game on your local network.</span></div>
       <div><b>English and Chinese</b><span>Switch at any time in Settings.</span></div>
       <div><b>No ads, no purchases, no tracking</b><span>Buy it once; it collects nothing
         about you. <a href="privacy.html" style="color:var(--sand)">Privacy policy</a>.</span></div>
